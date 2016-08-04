@@ -69,6 +69,8 @@ syntax match plantumlColonLine /:[^:]\+$/ contains=plantumlText
 " Activity diagram
 syntax match plantumlActivityThing /([^)]*)/
 syntax match plantumlActivitySynch /===[^=]\+===/
+syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
+syntax region plantumlActivityNote matchgroup=plantumlKeyword start=/^\s*note\s.\+$/ end=/^\s*end note$/
 
 " Skinparam keywords
 syntax keyword plantumlSkinparamKeyword activityArrowColor activityArrowFontColor activityArrowFontName
@@ -166,6 +168,8 @@ highlight default link plantumlMultilineComment Comment
 highlight default link plantumlColonLine Comment
 highlight default link plantumlActivityThing Type
 highlight default link plantumlActivitySynch Type
+highlight default link plantumlActivityLabel String
+highlight default link plantumlActivityNote String
 highlight default link plantumlSkinparamKeyword Identifier
 
 let &cpo=s:cpo_orig
