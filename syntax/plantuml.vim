@@ -23,7 +23,7 @@ syntax sync minlines=100
 syntax match plantumlPreProc /\%(^@startuml\|^@enduml\)\|!\%(include\|define\|undev\|ifdef\|endif\|ifndef\)\s*.*/ contains=plantumlDir
 syntax region plantumlDir start=/\s\+/ms=s+1 end=/$/ contained
 
-syntax keyword plantumlTypeKeyword actor participant usecase class interface abstract enum component state object artifact folder rect node frame cloud database storage agent boundary control entity card
+syntax keyword plantumlTypeKeyword actor participant usecase interface abstract enum component state object artifact folder rect node frame cloud database storage agent boundary control entity card
 syntax keyword plantumlKeyword as also autonumber caption title newpage box alt opt loop par break critical note rnote hnote legend group left right of on link over end activate deactivate destroy create footbox hide show skinparam skin top bottom
 syntax keyword plantumlKeyword package namespace page up down if else elseif endif partition footer header center rotate ref return is repeat start stop while endwhile fork again kill
 syntax keyword plantumlKeyword then detach
@@ -38,9 +38,7 @@ syntax match plantumlDirectedOrVerticalArrowRL /\%(<|\|<<\|<\|\*\|\<o\|\\\\\|\\\
 syntax region plantumlLabel start=/\[/ms=s+1 end=/\]/me=s-1 contained
 
 " Class
-syntax region plantumlClass start=/{/ end=/\s*}/ contains=plantumlClassArrows,
-\                                                         plantumlKeyword,
-\                                                         @plantumlClassOp
+syntax region plantumlClass matchgroup=plantumlTypeKeyword start=/\s*class [^{]\+{/ end=/\s*}/ contains=plantumlKeyword, @plantumlClassOp
 
 syntax match plantumlClassPublic      /+\w\+/ contained
 syntax match plantumlClassPrivate     /-\w\+/ contained
