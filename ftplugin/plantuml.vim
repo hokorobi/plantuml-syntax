@@ -7,7 +7,7 @@
 if exists("g:loaded_plantuml_plugin")
   finish
 endif
-let g:loaded_plantuml_plugin = 1
+let b:loaded_plantuml_plugin = 1
 
 if !exists("g:plantuml_executable_script")
   let g:plantuml_executable_script="plantuml"
@@ -21,6 +21,11 @@ if exists("loaded_matchit")
         \ ',\<note\>:\<end note\>'
 endif
 
-autocmd Filetype plantuml let &l:makeprg=g:plantuml_executable_script . " " .  fnameescape(expand("%"))
+let &l:makeprg=g:plantuml_executable_script . " " .  fnameescape(expand("%"))
 
 setlocal comments=s1:/',mb:',ex:'/,:' commentstring=/'%s'/ formatoptions-=t formatoptions+=croql
+
+let b:endwise_addition = '\=index(["note","legend"], submatch(0))!=-1 ? "end " . submatch(0) : "end"'
+let b:endwise_words = 'loop,group,alt,note,legend'
+let b:endwise_pattern = '^\s*\zs\<\(loop\|group\|alt\|note\ze[^:]*$\|legend\)\>.*$'
+let b:endwise_syngroups = 'plantumlKeyword'
