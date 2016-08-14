@@ -4,7 +4,7 @@
 " Last Change:  19-Jun-2012
 " Version:      0.1
 
-if exists("g:loaded_plantuml_plugin")
+if exists("b:loaded_plantuml_plugin")
   finish
 endif
 let b:loaded_plantuml_plugin = 1
