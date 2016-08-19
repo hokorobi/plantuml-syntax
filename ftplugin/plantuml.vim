@@ -4,16 +4,16 @@
 " Last Change:  19-Jun-2012
 " Version:      0.1
 
-if exists("b:loaded_plantuml_plugin")
+if exists('b:loaded_plantuml_plugin')
   finish
 endif
 let b:loaded_plantuml_plugin = 1
 
-if !exists("g:plantuml_executable_script")
-  let g:plantuml_executable_script="plantuml"
+if !exists('g:plantuml_executable_script')
+  let g:plantuml_executable_script='plantuml'
 endif
 
-if exists("loaded_matchit")
+if exists('loaded_matchit')
   let b:match_ignorecase = 0
   let b:match_words =
         \ '\<if\>:\<elseif\>:\<else\>:\<endif\>' .
@@ -21,7 +21,7 @@ if exists("loaded_matchit")
         \ ',\<note\>:\<end note\>'
 endif
 
-let &l:makeprg=g:plantuml_executable_script . " " .  fnameescape(expand("%"))
+let &l:makeprg=g:plantuml_executable_script . ' ' .  fnameescape(expand('%'))
 
 setlocal comments=s1:/',mb:',ex:'/,:' commentstring=/'%s'/ formatoptions-=t formatoptions+=croql
 
