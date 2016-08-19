@@ -38,7 +38,8 @@ syntax match plantumlDirectedOrVerticalArrowRL /\%(<|\|<<\|<\|\*\|\<o\|\\\\\|\\\
 syntax region plantumlLabel start=/\[/ms=s+1 end=/\]/me=s-1 contained
 
 " Class
-syntax region plantumlClass matchgroup=plantumlTypeKeyword start=/\s*class [^{]\+{/ end=/\s*}/ contains=plantumlKeyword, @plantumlClassOp
+syntax region plantumlClass matchgroup=plantumlTypeKeyword start=/\s*class [^{]\+{/ end=/\s*}/ contains=plantumlKeyword,
+\                                                                                                       @plantumlClassOp
 
 syntax match plantumlClassPublic      /+\w\+/ contained
 syntax match plantumlClassPrivate     /-\w\+/ contained
