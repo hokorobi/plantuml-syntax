@@ -38,6 +38,14 @@ syntax match plantumlDirectedOrVerticalArrowLR /[-\.]\%(le\?f\?t\?\|ri\?g\?h\?t\
 syntax match plantumlDirectedOrVerticalArrowRL /\%(<|\|<<\|<\|\*\|\<o\|\\\\\|\\\|\/\/\|\/\)[-\.]\%(le\?f\?t\?\|ri\?g\?h\?t\?\|up\?\|\do\?w\?n\?\)\?[-\.]\%(\[[^\]]*\]\)\?/ contains=plantumlLabel
 syntax region plantumlLabel start=/\[/ms=s+1 end=/\]/me=s-1 contained
 
+" Note
+syntax match plantumlNote /^\s*\zs[rh]\?note\s[^:]*:/he=s+5 contains=plantumlKeyword,plantumlColor contained
+syntax region plantumlNoteArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]*:/ end=/$/ contains=plantumlNote,plantumlSpecialString keepend
+
+syntax match plantumlNoteMultiLine /^\s*\zs[rh]\?note\s[^:]\+$/he=s+5 contains=plantumlKeyword,plantumlColor contained
+syntax match plantumlNoteMultiLine /^\s*end note$/ contained
+syntax region plantumlNoteMultiLineArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end note$/ contains=plantumlNoteMultiLine keepend
+
 " Class
 syntax region plantumlClass matchgroup=plantumlTypeKeyword start=/\s*class [^{]\+{/ end=/\s*}/ contains=plantumlKeyword,
 \                                                                                                       @plantumlClassOp
@@ -66,13 +74,6 @@ syntax match plantumlColonLine /\S\s\+\zs:[^:]\+$/
 syntax match plantumlActivityThing /([^)]*)/
 syntax match plantumlActivitySynch /===[^=]\+===/
 syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
-
-syntax match plantumlActivityNote /^\s*\zs[rh]\?note\s[^:]*:/he=s+5 contains=plantumlKeyword,plantumlColor contained
-syntax region plantumlActivityNoteArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]*:/ end=/$/ contains=plantumlActivityNote,plantumlSpecialString keepend
-
-syntax match plantumlActivityNoteMultiLine /^\s*\zs[rh]\?note\s[^:]\+$/he=s+5 contains=plantumlKeyword,plantumlColor contained
-syntax match plantumlActivityNoteMultiLine /^\s*end note$/ contained
-syntax region plantumlActivityNoteMultiLineArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end note$/ contains=plantumlActivityNoteMultiLine keepend
 
 " Skinparam keywords
 syntax keyword plantumlSkinparamKeyword activityArrowColor activityArrowFontColor activityArrowFontName
@@ -171,10 +172,10 @@ highlight default link plantumlActivityThing Type
 highlight default link plantumlActivitySynch Type
 highlight default link plantumlActivityLabel String
 highlight default link plantumlSkinparamKeyword Identifier
-highlight default link plantumlActivityNote Keyword
-highlight default link plantumlActivityNoteMultiLine Keyword
-highlight default link plantumlActivityNoteMultiLineArround String
-highlight default link plantumlActivityNoteArround String
+highlight default link plantumlNote Keyword
+highlight default link plantumlNoteMultiLine Keyword
+highlight default link plantumlNoteMultiLineArround String
+highlight default link plantumlNoteArround String
 
 let &cpo=s:cpo_orig
 unlet s:cpo_orig
