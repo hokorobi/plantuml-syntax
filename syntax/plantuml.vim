@@ -47,8 +47,9 @@ syntax match plantumlNoteMultiLine /^\s*end \?[rh]\?note$/ contained
 syntax region plantumlNoteMultiLineArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end \?[rh]\?note$/ contains=plantumlNoteMultiLine keepend
 
 " Class
-syntax region plantumlClass matchgroup=plantumlTypeKeyword start=/\s*class [^{]\+{/ end=/\s*}/ contains=plantumlKeyword,
-\                                                                                                       @plantumlClassOp
+syntax region plantumlClassString matchgroup=plantumlClass start=/\s*class\ze [^{]\+{/ end=/\s*\ze}/ contains=plantumlKeyword,
+\                                                                                                             @plantumlClassOp
+syntax match plantumlClass /\s*class\ze [^{]\+$/
 
 syntax match plantumlClassPublic      /+\w\+/ contained
 syntax match plantumlClassPrivate     /-\w\+/ contained
@@ -159,6 +160,7 @@ highlight default link plantumlHorizontalArrow Identifier
 highlight default link plantumlDirectedOrVerticalArrowLR Special
 highlight default link plantumlDirectedOrVerticalArrowRL Special
 highlight default link plantumlLabel Special
+highlight default link plantumlClass Type
 highlight default link plantumlClassPublic Structure
 highlight default link plantumlClassPrivate Macro
 highlight default link plantumlClassProtected Statement
