@@ -66,12 +66,14 @@ syntax match plantumlColonLine /\S\s\+\zs:[^:]\+$/
 syntax match plantumlActivityThing /([^)]*)/
 syntax match plantumlActivitySynch /===[^=]\+===/
 syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
-syntax region plantumlActivityNote start=/^\s*[rh]\?note\s/ end=/:/ oneline contains=plantumlKeyword, plantumlColor contained
-syntax region plantumlActivityNoteArround start=/^\s*[rh]\?note\s[^:]*:/ end=/$/ transparent contains=plantumlActivityNote, plantumlSpecialString keepend
 
-syntax region plantumlActivityNoteMulti start=/^\s*[rh]\?note\s/ end=/$/ contains=plantumlKeyword, plantumlColor contained
-syntax match plantumlActivityNoteMulti /^\s*end note$/ contained
-syntax region plantumlActivityNoteMultiArround start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end note$/ contains=plantumlActivityNoteMulti keepend
+syntax match plantumlActivityNote /^\s*[rh]\?note\s[^:]*:/he=s+5 contains=plantumlKeyword,plantumlColor contained
+syntax region plantumlActivityNoteArround start=/^\s*[rh]\?note\s[^:]*:/ end=/$/ contains=plantumlActivityNote,plantumlSpecialString keepend
+
+" syntax region plantumlActivityNoteMultiLine start=/^\s*[rh]\?note\s/ end=/$/ contains=plantumlKeyword,plantumlColor contained
+syntax match plantumlActivityNoteMultiLine /^\s*[rh]\?note\s[^:]\+$/he=s+5 contains=plantumlKeyword,plantumlColor contained
+syntax match plantumlActivityNoteMultiLine /^\s*end note$/ contained
+syntax region plantumlActivityNoteMultiLineArround start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end note$/ contains=plantumlActivityNoteMultiLine keepend
 
 " Skinparam keywords
 syntax keyword plantumlSkinparamKeyword activityArrowColor activityArrowFontColor activityArrowFontName
@@ -171,7 +173,7 @@ highlight default link plantumlActivitySynch Type
 highlight default link plantumlActivityLabel String
 highlight default link plantumlSkinparamKeyword Identifier
 highlight default link plantumlActivityNote Keyword
-highlight default link plantumlActivityNoteMulti Keyword
+highlight default link plantumlActivityNoteMultiLine Keyword
 
 let &cpo=s:cpo_orig
 unlet s:cpo_orig
