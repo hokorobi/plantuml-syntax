@@ -43,8 +43,8 @@ syntax match plantumlNote /^\s*\zs[rh]\?note\s[^:]*:/he=s+5 contains=plantumlKey
 syntax region plantumlNoteArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]*:/ end=/$/ contains=plantumlNote,plantumlSpecialString keepend
 
 syntax match plantumlNoteMultiLine /^\s*\zs[rh]\?note\s[^:]\+$/he=s+5 contains=plantumlKeyword,plantumlColor contained
-syntax match plantumlNoteMultiLine /^\s*end note$/ contained
-syntax region plantumlNoteMultiLineArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end note$/ contains=plantumlNoteMultiLine keepend
+syntax match plantumlNoteMultiLine /^\s*end \?[rh]\?note$/ contained
+syntax region plantumlNoteMultiLineArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end \?[rh]\?note$/ contains=plantumlNoteMultiLine keepend
 
 " Class
 syntax region plantumlClass matchgroup=plantumlTypeKeyword start=/\s*class [^{]\+{/ end=/\s*}/ contains=plantumlKeyword,
