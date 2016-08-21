@@ -67,10 +67,10 @@ syntax match plantumlActivityThing /([^)]*)/
 syntax match plantumlActivitySynch /===[^=]\+===/
 syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
 
-syntax match plantumlActivityNote /^\s*[rh]\?note\s[^:]*:/he=s+5 contains=plantumlKeyword,plantumlColor contained
+syntax match plantumlActivityNote /^\s*\zs[rh]\?note\s[^:]*:/he=s+5 contains=plantumlKeyword,plantumlColor contained
 syntax region plantumlActivityNoteArround start=/^\s*[rh]\?note\s[^:]*:/ end=/$/ contains=plantumlActivityNote,plantumlSpecialString keepend
 
-syntax match plantumlActivityNoteMultiLine /^\s*[rh]\?note\s[^:]\+$/he=s+5 contains=plantumlKeyword,plantumlColor contained
+syntax match plantumlActivityNoteMultiLine /^\s*\zs[rh]\?note\s[^:]\+$/he=s+5 contains=plantumlKeyword,plantumlColor contained
 syntax match plantumlActivityNoteMultiLine /^\s*end note$/ contained
 syntax region plantumlActivityNoteMultiLineArround start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end note$/ contains=plantumlActivityNoteMultiLine keepend
 
