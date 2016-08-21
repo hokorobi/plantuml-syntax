@@ -68,11 +68,11 @@ syntax match plantumlActivitySynch /===[^=]\+===/
 syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
 
 syntax match plantumlActivityNote /^\s*\zs[rh]\?note\s[^:]*:/he=s+5 contains=plantumlKeyword,plantumlColor contained
-syntax region plantumlActivityNoteArround start=/^\s*[rh]\?note\s[^:]*:/ end=/$/ contains=plantumlActivityNote,plantumlSpecialString keepend
+syntax region plantumlActivityNoteArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]*:/ end=/$/ contains=plantumlActivityNote,plantumlSpecialString keepend
 
 syntax match plantumlActivityNoteMultiLine /^\s*\zs[rh]\?note\s[^:]\+$/he=s+5 contains=plantumlKeyword,plantumlColor contained
 syntax match plantumlActivityNoteMultiLine /^\s*end note$/ contained
-syntax region plantumlActivityNoteMultiLineArround start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end note$/ contains=plantumlActivityNoteMultiLine keepend
+syntax region plantumlActivityNoteMultiLineArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]\+$/ end=/^\s*end note$/ contains=plantumlActivityNoteMultiLine keepend
 
 " Skinparam keywords
 syntax keyword plantumlSkinparamKeyword activityArrowColor activityArrowFontColor activityArrowFontName
@@ -173,6 +173,8 @@ highlight default link plantumlActivityLabel String
 highlight default link plantumlSkinparamKeyword Identifier
 highlight default link plantumlActivityNote Keyword
 highlight default link plantumlActivityNoteMultiLine Keyword
+highlight default link plantumlActivityNoteMultiLineArround String
+highlight default link plantumlActivityNoteArround String
 
 let &cpo=s:cpo_orig
 unlet s:cpo_orig
