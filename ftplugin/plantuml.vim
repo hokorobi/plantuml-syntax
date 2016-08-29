@@ -16,7 +16,7 @@ endif
 if exists('loaded_matchit')
   let b:match_ignorecase = 0
   let b:match_words =
-        \ '\(\<alt\>\|\<group\>\|\<loop\>\|\<note\>\|\<legend\>\):\<else\>:\<end\>' .
+        \ '\%(\<alt\>\|\<group\>\|\<loop\>\|\<note\>\|\<legend\>\):\<else\>:\<end\>' .
         \ ',\<if\>:\<elseif\>:\<else\>:\<endif\>' .
         \ ',\<\while\>:\<endwhile\>'
 endif
