@@ -3,7 +3,6 @@ scriptencoding utf-8
 " Language:     PlantUML
 " Maintainer:   Anders Thøgersen <first name at bladre dot dk>
 " Version:      0.2
-" TODO:         There are some bugs, add << >>
 "
 if exists('b:current_syntax')
   finish
