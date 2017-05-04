@@ -81,7 +81,8 @@ syntax match plantumlActivitySynch /===[^=]\+===/
 syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
 
 " Sequence diagram
-syntax match plantumlSequenceDivider /==[^=]\+==/
+syntax match plantumlSequenceDivider /^\s*==[^=]\+==\s*$/
+
 
 " Skinparam keywords
 syntax keyword plantumlSkinparamKeyword activityArrowColor activityArrowFontColor activityArrowFontName
