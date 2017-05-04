@@ -173,7 +173,7 @@ highlight default link plantumlSpecialString Special
 highlight default link plantumlString String
 highlight default link plantumlComment Comment
 highlight default link plantumlMultilineComment Comment
-highlight default link plantumlColonLine Comment
+highlight default link plantumlColonLine String
 highlight default link plantumlActivityThing Type
 highlight default link plantumlActivitySynch Type
 highlight default link plantumlActivityLabel String
