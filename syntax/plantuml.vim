@@ -80,6 +80,9 @@ syntax match plantumlActivityThing /([^)]*)/
 syntax match plantumlActivitySynch /===[^=]\+===/
 syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
 
+" Sequence diagram
+syntax match plantumlSequenceDivider /==[^=]\+==/
+
 " Skinparam keywords
 syntax keyword plantumlSkinparamKeyword activityArrowColor activityArrowFontColor activityArrowFontName
 syntax keyword plantumlSkinparamKeyword activityArrowFontSize activityArrowFontStyle activityBackgroundColor
@@ -169,6 +172,7 @@ highlight default link plantumlClassPrivate Macro
 highlight default link plantumlClassProtected Statement
 highlight default link plantumlClassPackPrivate Function
 highlight default link plantumlClassSeparator Comment
+highlight default link plantumlSequenceDivider Comment
 highlight default link plantumlSpecialString Identifier
 highlight default link plantumlString String
 highlight default link plantumlComment Comment
