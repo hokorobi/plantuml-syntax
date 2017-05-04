@@ -82,7 +82,8 @@ syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
 
 " Sequence diagram
 syntax match plantumlSequenceDivider /^\s*==[^=]\+==\s*$/
-
+syntax match plantumlSequenceSpace /^\s*|||\+\s*$/
+syntax match plantumlSequenceSpace /^\s*||\d\+||\+\s*$/
 
 " Skinparam keywords
 syntax keyword plantumlSkinparamKeyword activityArrowColor activityArrowFontColor activityArrowFontName
@@ -174,6 +175,7 @@ highlight default link plantumlClassProtected Statement
 highlight default link plantumlClassPackPrivate Function
 highlight default link plantumlClassSeparator Comment
 highlight default link plantumlSequenceDivider Comment
+highlight default link plantumlSequenceSpace Comment
 highlight default link plantumlSpecialString Identifier
 highlight default link plantumlString String
 highlight default link plantumlComment Comment
