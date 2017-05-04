@@ -73,7 +73,7 @@ syntax match plantumlComment /'.*$/ contains=plantumlCommentTODO
 syntax region plantumlMultilineComment start=/\/'/ end=/'\// contains=plantumlCommentTODO
 
 " Labels with a colon
-syntax match plantumlColonLine /\S\s*\zs:.\+$/
+syntax match plantumlColonLine /\S\s*\zs:.\+$/ contains=plantumlSpecialString
 
 " Activity diagram
 syntax match plantumlActivityThing /([^)]*)/
@@ -169,7 +169,7 @@ highlight default link plantumlClassPrivate Macro
 highlight default link plantumlClassProtected Statement
 highlight default link plantumlClassPackPrivate Function
 highlight default link plantumlClassSeparator Comment
-highlight default link plantumlSpecialString Special
+highlight default link plantumlSpecialString Identifier
 highlight default link plantumlString String
 highlight default link plantumlComment Comment
 highlight default link plantumlMultilineComment Comment
