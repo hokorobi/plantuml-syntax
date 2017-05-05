@@ -23,7 +23,7 @@ syntax match plantumlPreProc /\%(^@startuml\|^@enduml\)\|!\%(include\|define\|un
 syntax region plantumlDir start=/\s\+/ms=s+1 end=/$/ contained
 
 syntax keyword plantumlTypeKeyword actor participant usecase abstract enum component state object artifact folder rect node frame cloud database storage agent boundary control entity card rectangle sequence
-syntax keyword plantumlKeyword as also autonumber caption title newpage box alt opt loop par break critical legend group left right of on link over end activate deactivate destroy create footbox hide show skinparam skin top bottom
+syntax keyword plantumlKeyword as also autonumber caption title newpage box alt opt loop par break critical note rnote hnote legend group left right of on link over end activate deactivate destroy create footbox hide show skinparam skin top bottom
 syntax keyword plantumlKeyword package namespace page up down if else elseif endif partition footer header center rotate ref return is repeat start stop while endwhile fork again kill
 syntax keyword plantumlKeyword then detach
 syntax keyword plantumlClassKeyword class interface
@@ -38,14 +38,7 @@ syntax match plantumlDirectedOrVerticalArrowRL /\%(<|\|<<\|<\|\*\|\<o\|\\\\\|\\\
 syntax region plantumlLabel start=/\[/ms=s+1 end=/\]/me=s-1 contained
 
 " Note
-syntax match plantumlNote /^\s*[rh]\?note\s\ze"/
-
-syntax match plantumlNote /^\s*\zs[rh]\?note\s[^:]*:/he=s+5 contains=plantumlKeyword,plantumlColor contained
-syntax region plantumlNoteArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:]*:/ end=/$/ contains=plantumlNote,plantumlSpecialString keepend
-
-syntax match plantumlNoteMultiLine /^\s*\zs[rh]\?note\s[^:"]\+$/he=s+5 contains=plantumlKeyword,plantumlColor contained
-syntax match plantumlNoteMultiLine /^\s*end \?[rh]\?note$/ contained
-syntax region plantumlNoteMultiLineArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:"]\+$/ end=/^\s*end \?[rh]\?note$/ contains=plantumlNoteMultiLine keepend
+syntax region plantumlNoteMultiLine start=/\%(^\s*[rh]\?note\s[^:"]\+\)\@<=$/ end=/^\%(\s*end \?[rh]\?note$\)\@=/ contains=plantumlSpecialString
 
 " Class
 syntax region plantumlClass start=/\%(class\)\@<=\s[^{]\+{/ end=/\s*}/ contains=plantumlClassArrows,
@@ -190,10 +183,7 @@ highlight default link plantumlActivityThing Type
 highlight default link plantumlActivitySynch Type
 highlight default link plantumlActivityLabel String
 highlight default link plantumlSkinparamKeyword Identifier
-highlight default link plantumlNote Keyword
-highlight default link plantumlNoteMultiLine Keyword
-highlight default link plantumlNoteMultiLineArround String
-highlight default link plantumlNoteArround String
+highlight default link plantumlNoteMultiLine String
 highlight default link plantumlUsecaseActor String
 highlight default link plantumlStereotype Type
 
