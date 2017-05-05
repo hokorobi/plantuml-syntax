@@ -73,7 +73,7 @@ syntax match plantumlColonLine /\S\@<=\s*\zs:.\+$/ contains=plantumlSpecialStrin
 " Activity diagram
 syntax match plantumlActivityThing /([^)]*)/
 syntax match plantumlActivitySynch /===[^=]\+===/
-syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
+syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1 contains=plantumlSpecialString
 
 " Usecase diagram
 syntax match plantumlUsecaseActor /:.\{-1,}:/ contains=plantumlSpecialString
