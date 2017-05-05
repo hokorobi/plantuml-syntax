@@ -48,11 +48,11 @@ syntax match plantumlNoteMultiLine /^\s*end \?[rh]\?note$/ contained
 syntax region plantumlNoteMultiLineArround matchgroup=NONE start=/^\s*[rh]\?note\s[^:"]\+$/ end=/^\s*end \?[rh]\?note$/ contains=plantumlNoteMultiLine keepend
 
 " Class
-syntax region plantumlClass start=/{/ end=/\s*}/ contains=plantumlClassArrows,
-\                                                         plantumlClassKeyword,
-\                                                         @plantumlClassOp,
-\                                                         plantumlClassSeparator,
-\                                                         plantumlComment
+syntax region plantumlClass start=/\%(class\)\@<=\s[^{]\+{/ end=/\s*}/ contains=plantumlClassArrows,
+\                                                                               plantumlClassKeyword,
+\                                                                               @plantumlClassOp,
+\                                                                               plantumlClassSeparator,
+\                                                                               plantumlComment
 
 syntax match plantumlClassPublic      /+\w\+/ contained
 syntax match plantumlClassPrivate     /-\w\+/ contained
