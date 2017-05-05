@@ -81,7 +81,7 @@ syntax match plantumlActivitySynch /===[^=]\+===/
 syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
 
 " Usecase diagram
-syntax match plantumlUsecaseActor /:.\+:/ contains=plantumlSpecialString
+syntax match plantumlUsecaseActor /:.\{-1,}:/ contains=plantumlSpecialString
 
 " Sequence diagram
 syntax match plantumlSequenceDivider /^\s*==[^=]\+==\s*$/
