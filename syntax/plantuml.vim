@@ -75,7 +75,7 @@ syntax region plantumlMultilineComment start=/\/'/ end=/'\// contains=plantumlCo
 syntax match plantumlStereotype /<<.\{-1,}>>/ contains=plantumlSpecialString
 
 " Labels with a colon
-syntax match plantumlColonLine /\S\@=\s*\zs:.\+$/ contains=plantumlSpecialString
+syntax match plantumlColonLine /\S\@<=\s*\zs:.\+$/ contains=plantumlSpecialString
 
 " Activity diagram
 syntax match plantumlActivityThing /([^)]*)/
