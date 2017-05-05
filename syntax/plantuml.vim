@@ -80,6 +80,9 @@ syntax match plantumlActivityThing /([^)]*)/
 syntax match plantumlActivitySynch /===[^=]\+===/
 syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1
 
+" Usecase diagram
+syntax match plantumlUsecaseActor /:.\+:/ contains=plantumlSpecialString
+
 " Sequence diagram
 syntax match plantumlSequenceDivider /^\s*==[^=]\+==\s*$/
 syntax match plantumlSequenceSpace /^\s*|||\+\s*$/
@@ -189,6 +192,7 @@ highlight default link plantumlNote Keyword
 highlight default link plantumlNoteMultiLine Keyword
 highlight default link plantumlNoteMultiLineArround String
 highlight default link plantumlNoteArround String
+highlight default link plantumlUsecaseActor String
 
 let &cpo=s:cpo_orig
 unlet s:cpo_orig
