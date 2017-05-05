@@ -71,6 +71,8 @@ syntax region plantumlString start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=plantum
 syntax region plantumlString start=/'/ skip=/\\\\\|\\'/ end=/'/ contains=plantumlSpecialString
 syntax match plantumlComment /'.*$/ contains=plantumlCommentTODO
 syntax region plantumlMultilineComment start=/\/'/ end=/'\// contains=plantumlCommentTODO
+"   Stereotypes
+syntax match plantumlStereotype /<<.\{-1,}>>/ contains=plantumlSpecialString
 
 " Labels with a colon
 syntax match plantumlColonLine /\S\@=\s*\zs:.\+$/ contains=plantumlSpecialString
@@ -193,6 +195,7 @@ highlight default link plantumlNoteMultiLine Keyword
 highlight default link plantumlNoteMultiLineArround String
 highlight default link plantumlNoteArround String
 highlight default link plantumlUsecaseActor String
+highlight default link plantumlStereotype Type
 
 let &cpo=s:cpo_orig
 unlet s:cpo_orig
