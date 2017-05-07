@@ -41,7 +41,7 @@ syntax region plantumlLabel start=/\[/ms=s+1 end=/\]/me=s-1 contained
 syntax region plantumlNoteMultiLine start=/\%(^\s*[rh]\?note\s[^:"]\+\)\@<=$/ end=/^\%(\s*end \?[rh]\?note$\)\@=/ contains=plantumlSpecialString
 
 " Class
-syntax region plantumlClass start=/\%(class\s[^{]\+\)\@<=\zs{/ end=/\s*}/ contains=plantumlClassArrows,
+syntax region plantumlClass start=/\%(class\s[^{]\+\)\@<=\zs{/ end=/^\s*}/ contains=plantumlClassArrows,
 \                                                                                  plantumlClassKeyword,
 \                                                                                  @plantumlClassOp,
 \                                                                                  plantumlClassSeparator,
