@@ -38,6 +38,26 @@ syntax keyword plantumlKeyword then detach
 
 syntax keyword plantumlCommentTODO XXX TODO FIXME NOTE contained
 syntax match plantumlColor /#[0-9A-Fa-f]\{6\}\>/
+syntax keyword plantumlColor AliceBlue AntiqueWhite Aqua Aquamarine Azure Beige Bisque Black BlanchedAlmond
+syntax keyword plantumlColor Blue BlueViolet Brown BurlyWood CadetBlue Chartreuse Chocolate Coral
+syntax keyword plantumlColor CornflowerBlue Cornsilk Crimson Cyan DarkBlue DarkCyan DarkGoldenRod DarkGray
+syntax keyword plantumlColor DarkGreen DarkGrey DarkKhaki DarkMagenta DarkOliveGreen DarkOrchid DarkRed
+syntax keyword plantumlColor DarkSalmon DarkSeaGreen DarkSlateBlue DarkSlateGray DarkSlateGrey DarkTurquoise
+syntax keyword plantumlColor DarkViolet Darkorange DeepPink DeepSkyBlue DimGray DimGrey DodgerBlue FireBrick
+syntax keyword plantumlColor FloralWhite ForestGreen Fuchsia Gainsboro GhostWhite Gold GoldenRod Gray Green
+syntax keyword plantumlColor GreenYellow Grey HoneyDew HotPink IndianRed Indigo Ivory Khaki Lavender
+syntax keyword plantumlColor LavenderBlush LawnGreen LemonChiffon LightBlue LightCoral LightCyan
+syntax keyword plantumlColor LightGoldenRodYellow LightGray LightGreen LightGrey LightPink LightSalmon
+syntax keyword plantumlColor LightSeaGreen LightSkyBlue LightSlateGray LightSlateGrey LightSteelBlue
+syntax keyword plantumlColor LightYellow Lime LimeGreen Linen Magenta Maroon MediumAquaMarine MediumBlue
+syntax keyword plantumlColor MediumOrchid MediumPurple MediumSeaGreen MediumSlateBlue MediumSpringGreen
+syntax keyword plantumlColor MediumTurquoise MediumVioletRed MidnightBlue MintCream MistyRose Moccasin
+syntax keyword plantumlColor NavajoWhite Navy OldLace Olive OliveDrab Orange OrangeRed Orchid PaleGoldenRod
+syntax keyword plantumlColor PaleGreen PaleTurquoise PaleVioletRed PapayaWhip PeachPuff Peru Pink Plum
+syntax keyword plantumlColor PowderBlue Purple Red RosyBrown RoyalBlue SaddleBrown Salmon SandyBrown SeaGreen
+syntax keyword plantumlColor SeaShell Sienna Silver SkyBlue SlateBlue SlateGray SlateGrey Snow SpringGreen
+syntax keyword plantumlColor SteelBlue Tan Teal Thistle Tomato Turquoise Violet Wheat White WhiteSmoke Yellow
+syntax keyword plantumlColor YellowGreen
 
 " Arrows - Differentiate between horizontal and vertical arrows
 syntax match plantumlHorizontalArrow /\%([-\.]\%(|>\|>\|\*\|o\>\|\\\\\|\\\|\/\/\|\/\|\.\|-\)\|\%(<|\|<\|\*\|\<o\|\\\\\|\\\|\/\/\|\/\)[\.-]\)\%(\[[^\]]*\]\)\?/ contains=plantumlLabel
