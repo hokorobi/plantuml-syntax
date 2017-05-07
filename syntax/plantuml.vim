@@ -29,8 +29,11 @@ syntax keyword plantumlTypeKeyword database entity enum file folder frame node o
 syntax keyword plantumlTypeKeyword pipe queue rectangle state storage usecase
 syntax keyword plantumlTypeKeyword rect
 syntax keyword plantumlClassKeyword class interface
-syntax keyword plantumlKeyword as also autonumber caption title newpage box alt opt loop par break critical note rnote hnote legend group left right of on link over end activate deactivate destroy create footbox hide show skinparam skin top bottom
-syntax keyword plantumlKeyword package namespace page up down if else elseif endif partition footer header center rotate ref return is repeat start stop while endwhile fork again kill
+syntax keyword plantumlKeyword activate again also alt as autonumber bottom box break caption center create
+syntax keyword plantumlKeyword critical deactivate destroy down else elseif end endif endwhile footbox footer
+syntax keyword plantumlKeyword fork group header hide hnote if is kill left legend link loop namespace newpage
+syntax keyword plantumlKeyword note of on opt over package page par partition ref repeat return right rnote
+syntax keyword plantumlKeyword rotate show skin skinparam start stop title top up while
 syntax keyword plantumlKeyword then detach
 
 syntax keyword plantumlCommentTODO XXX TODO FIXME NOTE contained
