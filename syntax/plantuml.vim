@@ -64,11 +64,12 @@ syntax region plantumlString start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=plantum
 syntax region plantumlString start=/'/ skip=/\\\\\|\\'/ end=/'/ contains=plantumlSpecialString
 syntax match plantumlComment /'.*$/ contains=plantumlCommentTODO
 syntax region plantumlMultilineComment start=/\/'/ end=/'\// contains=plantumlCommentTODO
-"   Stereotypes
-syntax match plantumlStereotype /<<.\{-1,}>>/ contains=plantumlSpecialString
 
 " Labels with a colon
 syntax match plantumlColonLine /\S\@<=\s*\zs:.\+$/ contains=plantumlSpecialString
+
+" Stereotypes
+syntax match plantumlStereotype /<<.\{-1,}>>/ contains=plantumlSpecialString
 
 " Activity diagram
 syntax match plantumlActivityThing /([^)]*)/
