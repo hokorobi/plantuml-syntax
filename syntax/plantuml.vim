@@ -2,8 +2,6 @@ scriptencoding utf-8
 " Vim syntax file
 " Language:     PlantUML
 " Maintainer:   Anders Thøgersen <first name at bladre dot dk>
-" Version:      0.2
-"
 if exists('b:current_syntax')
   finish
 endif
@@ -111,6 +109,12 @@ syntax match plantumlUsecaseActor /:.\{-1,}:/ contains=plantumlSpecialString
 syntax match plantumlSequenceDivider /^\s*==[^=]\+==\s*$/
 syntax match plantumlSequenceSpace /^\s*|||\+\s*$/
 syntax match plantumlSequenceSpace /^\s*||\d\+||\+\s*$/
+
+" Sequence diagram
+syntax match plantumlSequenceDivider /^\s*==[^=]\+==\s*$/
+
+" Usecase diagram
+syntax match plantumlUsecaseActor /:.\{-1,}:/ contains=plantumlSpecialString
 
 " Skinparam keywords
 syntax keyword plantumlSkinparamKeyword ActivityBackgroundColor ActivityBarColor ActivityBorderColor
