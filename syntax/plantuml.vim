@@ -6,6 +6,7 @@ if exists('b:current_syntax')
 endif
 
 scriptencoding utf-8
+
 if v:version < 600
   syntax clear
 endif
