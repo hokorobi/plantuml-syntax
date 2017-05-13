@@ -24,8 +24,11 @@ syntax region plantumlDir start=/\s\+/ms=s+1 end=/$/ contained
 syntax keyword plantumlTypeKeyword abstract actor agent artifact boundary card cloud component control
 syntax keyword plantumlTypeKeyword database entity enum file folder frame node object package participant
 syntax keyword plantumlTypeKeyword queue rectangle stack state storage usecase
+" Not in 'java - jar plantuml.jar - language' output
 syntax keyword plantumlTypeKeyword rect
+
 syntax keyword plantumlClassKeyword class interface
+
 syntax keyword plantumlKeyword activate again also alt as autonumber bottom box break caption center create
 syntax keyword plantumlKeyword critical deactivate destroy down else elseif end endif endwhile footbox footer
 syntax keyword plantumlKeyword fork group header hide hnote if is kill left legend link loop namespace newpage
