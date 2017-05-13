@@ -112,6 +112,9 @@ syntax match plantumlSequenceSpace /^\s*||\d\+||\+\s*$/
 " Usecase diagram
 syntax match plantumlUsecaseActor /:.\{-1,}:/ contains=plantumlSpecialString
 
+" Component diagram
+syntax match plantumlComponent /\[.\{-1,}\]/ contains=plantumlSpecialString
+
 " Skinparam keywords
 syntax keyword plantumlSkinparamKeyword ActivityBackgroundColor ActivityBarColor ActivityBorderColor
 syntax keyword plantumlSkinparamKeyword ActivityBorderThickness ActivityDiamondBackgroundColor
@@ -290,6 +293,7 @@ highlight default link plantumlClassPrivate Macro
 highlight default link plantumlClassProtected Statement
 highlight default link plantumlClassPackPrivate Function
 highlight default link plantumlClassSeparator Comment
+highlight default link plantumlComponent String
 highlight default link plantumlSequenceDivider Comment
 highlight default link plantumlSequenceSpace Comment
 highlight default link plantumlSpecialString Identifier
