@@ -100,7 +100,7 @@ syntax match plantumlStereotype /<<.\{-1,}>>/ contains=plantumlSpecialString
 " Activity diagram
 syntax match plantumlActivityThing /([^)]*)/
 syntax match plantumlActivitySynch /===[^=]\+===/
-syntax region plantumlActivityLabel start=/^\s*:/ms=s+1 end=/;$/me=s-1 contains=plantumlSpecialString
+syntax region plantumlActivityLabel start=/:/ms=s+1 end=/[;|<>/\]}]$/me=s-1 contains=plantumlSpecialString
 
 " Sequence diagram
 syntax match plantumlSequenceDivider /^\s*==[^=]\+==\s*$/
