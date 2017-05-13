@@ -25,7 +25,7 @@ syntax keyword plantumlTypeKeyword abstract actor agent artifact boundary card c
 syntax keyword plantumlTypeKeyword database entity enum file folder frame node object package participant
 syntax keyword plantumlTypeKeyword queue rectangle stack state storage usecase
 " Not in 'java - jar plantuml.jar - language' output
-syntax keyword plantumlTypeKeyword rect
+syntax keyword plantumlTypeKeyword rect sprite
 
 syntax keyword plantumlClassKeyword class interface
 
