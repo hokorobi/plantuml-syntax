@@ -116,6 +116,7 @@ syntax match plantumlUsecaseActor /:.\{-1,}:/ contains=plantumlSpecialString
 syntax match plantumlComponent /\[.\{-1,}\]/ contains=plantumlSpecialString
 
 " Skinparam keywords
+syntax case ignore
 syntax keyword plantumlSkinparamKeyword ActivityBackgroundColor ActivityBarColor ActivityBorderColor
 syntax keyword plantumlSkinparamKeyword ActivityBorderThickness ActivityDiamondBackgroundColor
 syntax keyword plantumlSkinparamKeyword ActivityDiamondBorderColor ActivityDiamondFontColor ActivityDiamondFontName
@@ -274,6 +275,7 @@ syntax keyword plantumlSkinparamKeyword usecaseActorFontStyle usecaseActorStereo
 syntax keyword plantumlSkinparamKeyword usecaseActorStereotypeFontName usecaseActorStereotypeFontSize
 syntax keyword plantumlSkinparamKeyword usecaseActorStereotypeFontStyle usecaseArrowColor usecaseArrowFontColor
 syntax keyword plantumlSkinparamKeyword usecaseArrowFontName usecaseArrowFontSize usecaseArrowFontStyle
+syntax case match
 
 " Highlight
 highlight default link plantumlCommentTODO Todo
