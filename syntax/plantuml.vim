@@ -21,8 +21,6 @@ syntax sync minlines=100
 syntax match plantumlPreProc /\%(^@startuml\|^@enduml\)\|!\%(define|definelong|else|enddefinelong|endif|ifdef|ifndef|include|pragma|undef\)\s*.*/ contains=plantumlDir
 syntax region plantumlDir start=/\s\+/ms=s+1 end=/$/ contained
 
-syntax case ignore
-
 syntax keyword plantumlTypeKeyword abstract actor agent artifact boundary card cloud component control
 syntax keyword plantumlTypeKeyword database entity enum file folder frame node object package participant
 syntax keyword plantumlTypeKeyword queue rectangle stack state storage usecase
