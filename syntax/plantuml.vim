@@ -65,7 +65,8 @@ syntax match plantumlDirectedOrVerticalArrowRL /\%(<|\|<<\|<\|\*\|\<o\|\\\\\|\\\
 syntax region plantumlLabel start=/\[/ms=s+1 end=/\]/me=s-1 contained
 
 " Note
-syntax region plantumlNoteMultiLine start=/\%(^\s*[rh]\?note\s[^:"]\+\)\@<=$/ end=/^\%(\s*end \?[rh]\?note$\)\@=/ contains=plantumlSpecialString
+syntax region plantumlNoteMultiLine start=/\%(^\s*[rh]\?note\)\@<=\s\%([^:]\+$\)\@=/ end=/^\%(\s*end \?[rh]\?note$\)\@=/ contains=plantumlSpecialString,plantumlNoteMultiLineStart
+syntax match plantumlNoteMultiLineStart /\%(^\s*[rh]\?note\)\@<=\s\%([^:]\+$\)/ contained contains=plantumlKeyword,plantumlColor
 
 " Class
 syntax region plantumlClass start=/\%(class\s[^{]\+\)\@<=\zs{/ end=/^\s*}/ contains=plantumlClassArrows,
