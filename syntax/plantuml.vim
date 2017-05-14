@@ -24,8 +24,6 @@ syntax region plantumlDir start=/\s\+/ms=s+1 end=/$/ contained
 syntax keyword plantumlTypeKeyword abstract actor agent artifact boundary card cloud component control
 syntax keyword plantumlTypeKeyword database entity enum file folder frame node object package participant
 syntax keyword plantumlTypeKeyword queue rectangle stack state storage usecase
-" Not in 'java - jar plantuml.jar - language' output
-syntax keyword plantumlTypeKeyword sprite
 
 syntax keyword plantumlClassKeyword class interface
 
@@ -34,7 +32,8 @@ syntax keyword plantumlKeyword critical deactivate destroy down else elseif end 
 syntax keyword plantumlKeyword fork group header hide hnote if is kill left legend link loop namespace newpage
 syntax keyword plantumlKeyword note of on opt over package page par partition ref repeat return right rnote
 syntax keyword plantumlKeyword rotate show skin skinparam start stop title top up while
-syntax keyword plantumlKeyword then detach
+" Not in 'java - jar plantuml.jar - language' output
+syntax keyword plantumlKeyword then detach sprite
 
 syntax keyword plantumlCommentTODO XXX TODO FIXME NOTE contained
 syntax match plantumlColor /#[0-9A-Fa-f]\{6\}\>/
