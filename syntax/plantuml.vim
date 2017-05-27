@@ -69,7 +69,7 @@ syntax region plantumlNoteMultiLine start=/\%(^\s*[rh]\?note\)\@<=\s\%([^:"]\+$\
 syntax match plantumlNoteMultiLineStart /\%(^\s*[rh]\?note\)\@<=\s\%([^:]\+$\)/ contained contains=plantumlKeyword,plantumlColor,plantumlString
 
 " Class
-syntax region plantumlClass start=/\%(class\s[^{]\+\)\@<=\zs{/ end=/^\s*}/ contains=plantumlClassArrows,
+syntax region plantumlClass start=/\%(\%(class\|interface\|object\)\s[^{]\+\)\@<=\zs{/ end=/^\s*}/ contains=plantumlClassArrows,
 \                                                                                  plantumlClassKeyword,
 \                                                                                  @plantumlClassOp,
 \                                                                                  plantumlClassSeparator,
