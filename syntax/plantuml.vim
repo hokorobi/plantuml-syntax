@@ -73,8 +73,8 @@ syntax region plantumlText oneline start=/\[/ms=s+1 end=/\]/me=s-1 contained
 syntax match plantumlArrowDirectedLine /\([-.]\)\%(l\%[eft]\|r\%[ight]\|up\?\|d\%[own]\)\1/ contained
 
 " Note
-syntax region plantumlNoteMultiLine start=/\%(^\s*[rh]\?note\)\@<=\s\%([^:"]\+$\)\@=/ end=/^\%(\s*end \?[rh]\?note$\)\@=/ contains=plantumlSpecialString,plantumlNoteMultiLineStart
-syntax match plantumlNoteMultiLineStart /\%(^\s*[rh]\?note\)\@<=\s\%([^:]\+$\)/ contained contains=plantumlKeyword,plantumlColor,plantumlString
+syntax region plantumlNoteMultiLine start=/\%(^\s*[rh]\?note\)\@<=\s\%([^:"]\+$\)\@=/ end=/^\%(\s*end \?[rh]\?note$\)\@=/ contains=plantumlSpecialString,plantumlNoteMultiLineStart,plantumlTag
+syntax match plantumlNoteMultiLineStart /\%(^\s*[rh]\?note\)\@<=\s\%([^:]\+$\)/ contained contains=plantumlKeyword,plantumlColor,plantumlString,plantumlTag
 
 " Class
 syntax region plantumlClass start=/\%(\%(class\|interface\|object\)\s[^{]\+\)\@<=\zs{/ end=/^\s*}/ contains=plantumlClassArrows,
@@ -100,6 +100,10 @@ syntax region plantumlString start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=plantum
 syntax region plantumlString start=/'/ skip=/\\\\\|\\'/ end=/'/ contains=plantumlSpecialString
 syntax match plantumlComment /'.*$/ contains=plantumlCommentTODO
 syntax region plantumlMultilineComment start=/\/'/ end=/'\// contains=plantumlCommentTODO
+
+syntax match plantumlTag /<\/\?[bisu]>/
+syntax region plantumlTag start=/<img/ end=/>/
+syntax region plantumlTag start=/<\/\?\%(font\|size\|color\|del\|strike\)/ end=/>/
 
 " Labels with a colon
 syntax match plantumlColonLine /\S\@<=\s*\zs:.\+$/ contains=plantumlSpecialString
@@ -313,6 +317,7 @@ highlight default link plantumlComponent String
 highlight default link plantumlSequenceDivider Comment
 highlight default link plantumlSequenceSpace Comment
 highlight default link plantumlSpecialString Identifier
+highlight default link plantumlTag Identifier
 highlight default link plantumlSequenceDelay Identifier
 highlight default link plantumlString String
 highlight default link plantumlComment Comment
