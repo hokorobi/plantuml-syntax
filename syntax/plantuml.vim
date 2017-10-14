@@ -87,7 +87,7 @@ syntax match plantumlClassPublic      /^\s*+\s*\w\+/ contained
 syntax match plantumlClassPrivate     /^\s*-\s*\w\+/ contained
 syntax match plantumlClassProtected   /^\s*#\s*\w\+/ contained
 syntax match plantumlClassPackPrivate /^\s*\~\s*\w\+/ contained
-syntax match plantumlClassSeparator   /__\%(.\+__\)\?\|==\%(.\+==\)\?\|--\%(.\+--\)\?\|\.\.\%(.\+\.\.\)\?/ contained
+syntax match plantumlClassSeparator   /\([_=\-.]\)\{2}\%(.\+\1\{2}\)\?/ contained
 
 syntax cluster plantumlClassOp contains=plantumlClassPublic,
 \                                       plantumlClassPrivate,
