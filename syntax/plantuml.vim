@@ -18,7 +18,7 @@ let b:current_syntax = 'plantuml'
 
 syntax sync minlines=100
 
-syntax match plantumlPreProc /\%(^@startuml\|^@enduml\)\|!\%(define|definelong|else|enddefinelong|endif|if|ifdef|ifndef|include|pragma|undef\)\s*.*/ contains=plantumlDir
+syntax match plantumlPreProc /\%(^@startuml\|^@enduml\)\|!\%(define|definelong|else|enddefinelong|endif|exit|if|ifdef|ifndef|include|pragma|undef\)\s*.*/ contains=plantumlDir
 syntax region plantumlDir start=/\s\+/ms=s+1 end=/$/ contained
 
 syntax keyword plantumlTypeKeyword abstract actor agent archimate artifact boundary card cloud component control
@@ -30,8 +30,8 @@ syntax keyword plantumlClassKeyword class interface
 syntax keyword plantumlKeyword activate again also alt as autonumber bottom box break caption center create
 syntax keyword plantumlKeyword critical deactivate destroy down else elseif end endif endwhile footbox footer
 syntax keyword plantumlKeyword fork group header hide hnote if is kill left legend link loop namespace newpage
-syntax keyword plantumlKeyword note of on opt over package page par partition ref repeat return right rnote
-syntax keyword plantumlKeyword rotate show skin skinparam start stop title top up while
+syntax keyword plantumlKeyword note of on opt order over package page par partition ref repeat return right
+syntax keyword plantumlKeyword rnote rotate show skin skinparam start stop title top up while
 " Not in 'java - jar plantuml.jar - language' output
 syntax keyword plantumlKeyword then detach sprite
 
