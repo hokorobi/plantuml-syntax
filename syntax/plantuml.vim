@@ -34,7 +34,7 @@ syntax keyword plantumlKeyword loop namespace newpage note of on opt order over 
 syntax keyword plantumlKeyword repeat return right rnote rotate show skin skinparam start stop title top up
 syntax keyword plantumlKeyword while
 " Not in 'java - jar plantuml.jar - language' output
-syntax keyword plantumlKeyword then detach sprite
+syntax keyword plantumlKeyword endsplit then detach split sprite
 
 syntax keyword plantumlCommentTODO XXX TODO FIXME NOTE contained
 syntax match plantumlColor /#[0-9A-Fa-f]\{6\}\>/
