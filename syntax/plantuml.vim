@@ -22,7 +22,7 @@ syntax match plantumlPreProc /\%(^@startuml\|^@enduml\)\|!\%(define\|definelong\
 syntax region plantumlDir start=/\s\+/ms=s+1 end=/$/ contained
 
 syntax keyword plantumlTypeKeyword abstract actor agent archimate artifact boundary card cloud component control
-syntax keyword plantumlTypeKeyword database entity enum file folder frame node object package participant
+syntax keyword plantumlTypeKeyword database diamond entity enum file folder frame node object package participant
 syntax keyword plantumlTypeKeyword queue rectangle stack state storage usecase
 
 syntax keyword plantumlClassKeyword class interface
