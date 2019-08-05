@@ -144,8 +144,6 @@ let s:mindmapHilightLinks = [
       \ 'Function', 'Todo'
       \  ]
 
-syntax match plantumlMindmap1 /^[-+*][_<>]\?/ contained
-
 let i = 1
 let contained = []
 while i < len(s:mindmapHilightLinks)
