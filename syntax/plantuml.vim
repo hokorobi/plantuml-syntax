@@ -154,6 +154,11 @@ endwhile
 
 execute "syntax region plantumlMindmap oneline start=/^\\s*[-+*]_\\?/ end=/$/ contains=" . join(contained, ',')
 
+" nwdiag
+syntax region plantumlNwdiag start=/nwdiag\s\+{/ end=/@enduml/ contains=plantumlNwKeyword
+syntax keyword plantumlNwKeyword network address group
+
+
 " Skinparam keywords
 syntax case ignore
 syntax keyword plantumlSkinparamKeyword ActivityBackgroundColor ActivityBarColor ActivityBorderColor
@@ -357,6 +362,7 @@ syntax case match
 highlight default link plantumlCommentTODO Todo
 highlight default link plantumlKeyword Keyword
 highlight default link plantumlClassKeyword Keyword
+highlight default link plantumlNwKeyword Keyword
 highlight default link plantumlTypeKeyword Type
 highlight default link plantumlPreProc PreProc
 highlight default link plantumlDir Constant
