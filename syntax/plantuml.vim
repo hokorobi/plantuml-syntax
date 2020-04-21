@@ -366,6 +366,9 @@ syntax keyword plantumlSkinparamKeyword usecaseActorStereotypeFontStyle usecaseA
 syntax keyword plantumlSkinparamKeyword usecaseArrowFontName usecaseArrowFontSize usecaseArrowFontStyle
 syntax case match
 
+" Builtin Function
+syntax match plantumlBuiltinFunction /%\%(strlen\|substr\|strpos\|intval\|file_exists\|function_exists\|variable_exists\|set_variable_value\|get_variable_value\|getenv\|dirpath\|filename\|date\|true\|false\|not\|lower\|upper\)/
+
 " Highlight
 highlight default link plantumlCommentTODO Todo
 highlight default link plantumlKeyword Keyword
@@ -404,6 +407,7 @@ highlight default link plantumlSkinparamKeyword Identifier
 highlight default link plantumlNoteMultiLine String
 highlight default link plantumlUsecaseActor String
 highlight default link plantumlStereotype Type
+highlight default link plantumlBuiltinFunction Function
 
 let &cpoptions=s:cpo_orig
 unlet s:cpo_orig
