@@ -19,7 +19,7 @@ let b:current_syntax = 'plantuml'
 syntax sync minlines=100
 
 syntax match plantumlPreProc /\%(^@start\|^@end\)\%(dot\|mindmap\|uml\|salt\|wbs\|gantt\)/
-syntax match plantumlPreProc /!\%(assert\|define\|definelong\|else\|enddefinelong\|endfunction\|endif\|endprocedure\|endsub\|exit\|function\|if\|ifdef\|ifndef\|include\|log\|memorydump\|pragma\|procedure\|return\|startsub\|undef\|unquoted\)\s*.*/ contains=plantumlDir
+syntax match plantumlPreProc /!\%(assert\|define\|definelong\|dump_memory\|else\|enddefinelong\|endfunction\|endif\|endprocedure\|endsub\|exit\|function\|if\|ifdef\|ifndef\|import\|include\|local\|log\|memorydump\|pragma\|procedure\|return\|startsub\|undef\|unquoted\)\s*.*/ contains=plantumlDir
 syntax region plantumlDir start=/\s\+/ms=s+1 end=/$/ contained
 
 " type
@@ -36,12 +36,15 @@ syntax keyword plantumlTypeKeyword concise robust
 " keyword
 " From 'java - jar plantuml.jar - language' results {{{
 " Since "syntax keyword" can handle only words, "top to bottom direction" is excluded.
-syntax keyword plantumlKeyword accross activate again allow_mixing allowmixing also alt as autonumber bottom
-syntax keyword plantumlKeyword box break caption center create critical deactivate destroy down else elseif end
-syntax keyword plantumlKeyword endif endwhile footbox footer fork group header hide hnote if is kill left
-syntax keyword plantumlKeyword legend link loop mainframe namespace newpage note of on opt order over package
-syntax keyword plantumlKeyword page par partition ref repeat return right rnote rotate show skin skinparam
-syntax keyword plantumlKeyword split start stereotype stop title top up while
+syntax keyword plantumlKeyword across activate again allow_mixing allowmixing also alt as autonumber bold
+syntax keyword plantumlKeyword bottom box break caption center circle color create critical dashed deactivate
+syntax keyword plantumlKeyword description destroy dotted down else elseif empty end endif endwhile false
+syntax keyword plantumlKeyword footbox footer fork group header hide hnote if is italic kill left legend link
+syntax keyword plantumlKeyword loop mainframe map members namespace newpage normal note of on opt order over
+syntax keyword plantumlKeyword package page par partition plain ref repeat return right rnote rotate show skin
+syntax keyword plantumlKeyword skinparam split sprite start stereotype stop style title top top to bottom
+syntax keyword plantumlKeyword direction true up while
+
 "}}}
 " Not in 'java - jar plantuml.jar - language' results
 syntax keyword plantumlKeyword endlegend sprite then
@@ -185,10 +188,10 @@ syntax keyword plantumlSkinparamKeyword ArchimateBackgroundColor ArchimateBorder
 syntax keyword plantumlSkinparamKeyword ArchimateFontColor ArchimateFontName ArchimateFontSize ArchimateFontStyle
 syntax keyword plantumlSkinparamKeyword ArchimateStereotypeFontColor ArchimateStereotypeFontName
 syntax keyword plantumlSkinparamKeyword ArchimateStereotypeFontSize ArchimateStereotypeFontStyle ArrowColor
-syntax keyword plantumlSkinparamKeyword ArrowFontColor ArrowFontName ArrowFontSize ArrowFontStyle ArrowLollipopColor
-syntax keyword plantumlSkinparamKeyword ArrowMessageAlignment ArrowThickness ArtifactBackgroundColor ArtifactBorderColor
-syntax keyword plantumlSkinparamKeyword ArtifactFontColor ArtifactFontName ArtifactFontSize ArtifactFontStyle
-syntax keyword plantumlSkinparamKeyword ArtifactStereotypeFontColor ArtifactStereotypeFontName
+syntax keyword plantumlSkinparamKeyword ArrowFontColor ArrowFontName ArrowFontSize ArrowFontStyle ArrowHeadColor
+syntax keyword plantumlSkinparamKeyword ArrowLollipopColor ArrowMessageAlignment ArrowThickness ArtifactBackgroundColor
+syntax keyword plantumlSkinparamKeyword ArtifactBorderColor ArtifactFontColor ArtifactFontName ArtifactFontSize
+syntax keyword plantumlSkinparamKeyword ArtifactFontStyle ArtifactStereotypeFontColor ArtifactStereotypeFontName
 syntax keyword plantumlSkinparamKeyword ArtifactStereotypeFontSize ArtifactStereotypeFontStyle BackgroundColor
 syntax keyword plantumlSkinparamKeyword BiddableBackgroundColor BiddableBorderColor BoundaryBackgroundColor
 syntax keyword plantumlSkinparamKeyword BoundaryBorderColor BoundaryFontColor BoundaryFontName BoundaryFontSize
@@ -332,6 +335,7 @@ syntax keyword plantumlSkinparamKeyword UsecaseBackgroundColor UsecaseBorderColo
 syntax keyword plantumlSkinparamKeyword UsecaseFontColor UsecaseFontName UsecaseFontSize UsecaseFontStyle
 syntax keyword plantumlSkinparamKeyword UsecaseStereotypeFontColor UsecaseStereotypeFontName UsecaseStereotypeFontSize
 syntax keyword plantumlSkinparamKeyword UsecaseStereotypeFontStyle WrapWidth
+
 " Not in 'java - jar plantuml.jar - language' output
 syntax keyword plantumlSkinparamKeyword activityArrowColor activityArrowFontColor activityArrowFontName
 syntax keyword plantumlSkinparamKeyword activityArrowFontSize activityArrowFontStyle BarColor BorderColor
