@@ -135,7 +135,7 @@ syntax match plantumlColonLine /\S\@<=\s*\zs : .\+$/ contains=plantumlSpecialStr
 syntax match plantumlStereotype /<<[^-.]\+>>/ contains=plantumlSpecialString
 
 " Activity diagram
-syntax match plantumlActivityThing /([^)]*)/
+syntax match plantumlActivityThing /([^)]*)/ contains=plantumlSpecialString
 syntax match plantumlActivitySynch /===[^=]\+===/
 syntax match plantumlActivityLabel /\%(^\%(#\S\+\)\?\)\@<=:\_[^;|<>/\]}]\+[;|<>/\]}]$/ contains=plantumlSpecialString
 
